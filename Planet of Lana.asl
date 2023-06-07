@@ -1,0 +1,12 @@
+state("Planet of Lana") {
+	byte chapterID: "GameAssembly.dll", 0x24A0E80, 0xB8, 0x0, 0x18, 0x18, 0x10, 0x20, 0x20, 0x10;
+	byte sceneID: "GameAssembly.dll", 0x24A0E80, 0xB8, 0x0, 0x18, 0x18, 0x10, 0x20, 0x20, 0x14;
+}
+
+start {
+	return current.chapterID == 1 && current.sceneID == 10;
+}
+
+split {
+	return old.chapterID != current.chapterID;
+}
